@@ -3,7 +3,6 @@ C:\git\Source\Repos\abbie-chuckling-nondirectional\abbie-chuckling-nondirectiona
 C:\git\Source\Repos\abbie-chuckling-nondirectional\abbie-chuckling-nondirectional\bin\Debug\netcoreapp2.0\abbie-chuckling-nondirectional.runtimeconfig.dev.json
 C:\git\Source\Repos\abbie-chuckling-nondirectional\abbie-chuckling-nondirectional\bin\Debug\netcoreapp2.0\abbie-chuckling-nondirectional.dll
 C:\git\Source\Repos\abbie-chuckling-nondirectional\abbie-chuckling-nondirectional\bin\Debug\netcoreapp2.0\abbie-chuckling-nondirectional.pdb
-C:\git\Source\Repos\abbie-chuckling-nondirectional\abbie-chuckling-nondirectional\obj\Debug\netcoreapp2.0\abbie-chuckling-nondirectional.csprojAssemblyReference.cache
 C:\git\Source\Repos\abbie-chuckling-nondirectional\abbie-chuckling-nondirectional\obj\Debug\netcoreapp2.0\abbie-chuckling-nondirectional.csproj.CoreCompileInputs.cache
 C:\git\Source\Repos\abbie-chuckling-nondirectional\abbie-chuckling-nondirectional\obj\Debug\netcoreapp2.0\abbie-chuckling-nondirectional.AssemblyInfoInputs.cache
 C:\git\Source\Repos\abbie-chuckling-nondirectional\abbie-chuckling-nondirectional\obj\Debug\netcoreapp2.0\abbie-chuckling-nondirectional.AssemblyInfo.cs
