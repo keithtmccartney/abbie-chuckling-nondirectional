@@ -14,6 +14,8 @@ namespace abbie_chuckling_nondirectional
     {
         public IList<Block> Chain { set; get; }
 
+        public int Difficulty { set; get; } = 2; //The Blockchain class is updated to have a new field Difficulty.
+
         public Blockchain()
         {
             InitializeChain();
@@ -46,13 +48,17 @@ namespace abbie_chuckling_nondirectional
             return Chain[Chain.Count - 1];
         }
 
+        /// <summary>
+        /// The new block generating process is updated to add a mining step.
+        /// </summary>
+        /// <param name="block"></param>
         public void AddBlock(Block block)
         {
             Block latestBlock = GetLatestBlock();
 
             block.Index = latestBlock.Index + 1;
             block.PreviousHash = latestBlock.Hash;
-            block.Hash = block.CalculateHash();
+            block.Mine(this.Difficulty);
 
             Chain.Add(block);
         }

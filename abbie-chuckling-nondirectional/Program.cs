@@ -7,11 +7,19 @@ namespace abbie_chuckling_nondirectional
     {
         static void Main(string[] args)
         {
+            #region After updating Block and Blockchain class, some debugging code is added to the program to result in the amount of time spent on added blocks.
+            var startTime = DateTime.Now;
+
             Blockchain phillyCoin = new Blockchain();
 
             phillyCoin.AddBlock(new Block(DateTime.Now, null, "{sender:Henry,receiver:MaHesh,amount:10}"));
             phillyCoin.AddBlock(new Block(DateTime.Now, null, "{sender:MaHesh,receiver:Henry,amount:5}"));
             phillyCoin.AddBlock(new Block(DateTime.Now, null, "{sender:Mahesh,receiver:Henry,amount:5}"));
+
+            var endTime = DateTime.Now;
+
+            Console.WriteLine($"Duration: {endTime - startTime}");
+            #endregion
 
             #region One of the advantages of using blockchain is data security. Data security means that tampering with the old data and altering the method of securing new data is prevented by both the cryptographic method and the non-centralized storage of the data itself. However, blockchain is just a data structure in which data can be easily changed like this. Therefore, we need a way to validate the data. This is why I have added an IsValid method to the code.
             //phillyCoin.Chain[1].Data = "{sender:Henry,receiver:MaHesh,amount:1000}";
