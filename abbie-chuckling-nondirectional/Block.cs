@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
@@ -26,11 +27,15 @@ namespace abbie_chuckling_nondirectional
             Hash = CalculateHash();
         }
 
+        /// <summary>
+        /// The CalculateHash method is also updated to use Transactions instead of Data to get hash of a block.
+        /// </summary>
+        /// <returns></returns>
         public string CalculateHash()
         {
             SHA256 sha256 = SHA256.Create();
 
-            byte[] inputBytes = Encoding.ASCII.GetBytes($"{TimeStamp}-{PreviousHash ?? ""}-{Data}-{Nonce}");
+            byte[] inputBytes = Encoding.ASCII.GetBytes($"{TimeStamp}-{PreviousHash ?? ""}-{JsonConvert.SerializeObject(Transactions)}-{Nonce}");
             byte[] outputBytes = sha256.ComputeHash(inputBytes);
 
             return Convert.ToBase64String(outputBytes);

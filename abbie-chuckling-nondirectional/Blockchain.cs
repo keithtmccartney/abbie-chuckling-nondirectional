@@ -14,6 +14,8 @@ namespace abbie_chuckling_nondirectional
     {
         public IList<Block> Chain { set; get; }
 
+        IList<Transaction> PendingTransactions = new List<Transaction>(); //The new block generating process is a time-consuming process. But, a transaction can be submitted anytime, so we need to have a place to store transactions before they are processed. Therefore, we added a new field, PendingTransactions, to store newly added transactions.
+
         public int Difficulty { set; get; } = 2; //The Blockchain class is updated to have a new field Difficulty.
 
         public Blockchain()
@@ -88,6 +90,31 @@ namespace abbie_chuckling_nondirectional
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// We added a CreateTransaction method to add a new transaction to the PendingTransaction collection.
+        /// </summary>
+        /// <param name="transaction"></param>
+        public void CreateTransaction(Transaction transaction)
+        {
+            PendingTransactions.Add(transaction);
+        }
+
+        /// <summary>
+        /// We need to update Blockchain and add a ProcessPendingTransactions method.
+        /// This method needs a miner address as the parameter.
+        /// </summary>
+        /// <param name="minerAddress"></param>
+        public void ProcessPendingTransactions(string minerAddress)
+        {
+            Block block = new Block(DateTime.Now, GetLatestBlock().Hash, PendingTransactions);
+
+            AddBlock(block);
+
+            PendingTransactions = new List<Transaction>();
+
+            CreateTransaction(new Transaction(null, minerAddress, Reward));
         }
     }
 }
