@@ -14,6 +14,16 @@ Grab the training at [https://www.c-sharpcorner.com/article/blockchain-basics-bu
 * This is very difficult because new blocks are constantly added into the blockchain by good players.
 * Proof-of-Work requires a lot of computing time.
 * This brings up a question, why are people willing to connect their computer to a blockchain network and donate their computing time to the mining process?
+* I did further refactor and add transaction and reward into the basic blockchain.
+* We have a more completed Blockchain right now.
+* However, everything we have so far works only on one computer.
+* The blockchain is a decentralized, distributed network.
+* How to build a network and let computers join the network as a node and talk to each other.
+* It will be the next thing I want to cover in my next article.
+
+## Award
+
+* The incentive for miners to continue providing their computing time to generate new blocks is awarded. Awards are given after processed transactions and adding a new block.
 
 ## Thanks
 
